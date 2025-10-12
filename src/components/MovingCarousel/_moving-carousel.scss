@@ -1,0 +1,9 @@
+.moving-carousel {
+  opacity: 1;
+  transform: "none";
+
+  &__container {
+    will-change: "transform";
+    height: "100%";
+  }
+}
