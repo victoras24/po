@@ -33,8 +33,7 @@ export const Project: React.FC<ProjectProps> = ({
       >
         <div className="flex-1 flex flex-col">
           <div className="flex items-center gap-3 mb-2">
-            <Avatar>
-              {" "}
+            <Avatar style={{ backgroundColor: "white", padding: "2px" }}>
               <AvatarImage src={image} />
               <AvatarFallback>{title[0]}</AvatarFallback>
             </Avatar>
