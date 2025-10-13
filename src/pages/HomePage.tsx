@@ -46,6 +46,7 @@ export const HomePage = () => {
           {Projects.map((project) => {
             return (
               <Project
+                key={project.id}
                 id={project.id}
                 image={project.image}
                 title={project.title}

@@ -7,10 +7,10 @@ export const Intro = () => {
         </div>
       </div>
       <h1 className="from-foreground via-foreground/90 to-foreground/70 bg-gradient-to-r bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl">
-        Victoras Isaakidis{" "}
-        <span className="font-serif font-light italic">
+        Victoras Isaakidis
+        <div className="font-serif font-light italic block">
           Full Stack Software Developer
-        </span>{" "}
+        </div>
       </h1>
     </div>
   );
