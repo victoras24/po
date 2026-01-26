@@ -15,14 +15,14 @@ export const HomePage = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
 				transition={{ duration: 0.5, ease: "easeOut" }}
-				className="relative isolate container mx-auto w-full py-20 md:py-32 lg:py-40"
+				className="relative isolate container mx-auto w-full py-5 md:py-8 lg:py-5"
 			>
 				<div className="grid items-center gap-12 lg:grid-cols-2 mb-8">
 					<Intro />
 					<AbouMeWindow />
 				</div>
 			</motion.section>
-			<section id="tech-stack" className="w-full py-20 md:py-32">
+			<section id="tech-stack" className="w-full py-5 md:py-8">
 				<Title
 					header={"Tech Stack"}
 					description={
@@ -35,7 +35,7 @@ export const HomePage = () => {
 					<MovingCarousel items={row3Items} />
 				</div>
 			</section>
-			<section id="projects" className="w-full py-20 md:py-32">
+			<section id="projects" className="w-full py-5 md:py-8">
 				<Title
 					header={"Projects"}
 					description={
