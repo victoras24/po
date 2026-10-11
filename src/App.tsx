@@ -1,10 +1,9 @@
-import "./App.css";
+import { ThemeProvider } from "next-themes";
 import { HomePage } from "./pages/HomePage";
-import { ThemeProvider } from "./components/ui/theme-provider";
 
 export const App: React.FC = () => {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider attribute="class" storageKey="vi-portfolio-theme">
       <HomePage />
     </ThemeProvider>
   );

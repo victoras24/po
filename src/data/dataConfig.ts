@@ -1,216 +1,204 @@
-import companySearchImage from "../assets/fullGroup.svg";
-import quizicalImage from "../assets/quizical.svg";
-import vanLifeImage from "../assets/vanlife.svg";
-import eleniSweetsImage from "../assets/elenisweets.svg";
+import companySearchImage from "../assets/companysearch.svg";
 import cynewstoday from "../assets/cynewstoday.svg";
-import websocketfromscratch from "../assets/websocketfromscratch.svg";
+import websockets from "../assets/websockets.svg";
+import eleniSweetsImage from "../assets/elenisweets.svg";
+import vanLifeImage from "../assets/vanlife.svg";
+import quizzicalShot from "../assets/quizzical-shot.png";
 
-export const row1Items = [
-	{
-		id: 1,
-		label: "HTML",
-		color: "bg-rose-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-	},
-	{
-		id: 2,
-		label: "CSS",
-		color: "bg-sky-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-	},
-	{
-		id: 3,
+const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/";
+const LOBE = "https://unpkg.com/@lobehub/icons-static-svg@1/icons/";
+
+export type TechItem = {
+	label: string;
+	icon: string;
+	// Single-colour icon that needs inverting in dark mode
+	mono?: boolean;
+};
+
+export const tech = {
+	html: { label: "HTML", icon: DEVICON + "html5/html5-original.svg" },
+	css: { label: "CSS", icon: DEVICON + "css3/css3-original.svg" },
+	react: {
 		label: "React",
-		color: "bg-cyan-100",
 		icon: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
 	},
-	{
-		id: 4,
+	ts: {
 		label: "TypeScript",
-		color: "bg-blue-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+		icon: DEVICON + "typescript/typescript-original.svg",
 	},
-	{
-		id: 5,
+	js: {
 		label: "JavaScript",
-		color: "bg-yellow-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+		icon: DEVICON + "javascript/javascript-original.svg",
 	},
-];
-
-export const row2Items = [
-	{
-		id: 1,
-		label: "C#",
-		color: "bg-violet-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
-	},
-	{
-		id: 2,
-		label: ".NET",
-		color: "bg-purple-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
-	},
-	{
-		id: 3,
+	cs: { label: "C#", icon: DEVICON + "csharp/csharp-original.svg" },
+	net: { label: ".NET", icon: DEVICON + "dot-net/dot-net-original.svg" },
+	next: {
 		label: "Next.js",
-		color: "bg-lime-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+		icon: DEVICON + "nextjs/nextjs-original.svg",
+		mono: true,
 	},
-	{
-		id: 4,
-		label: "Docker",
-		color: "bg-teal-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-	},
-	{
-		id: 5,
+	docker: { label: "Docker", icon: DEVICON + "docker/docker-original.svg" },
+	github: {
 		label: "GitHub",
-		color: "bg-neutral-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+		icon: DEVICON + "github/github-original.svg",
+		mono: true,
 	},
-];
-
-export const row3Items = [
-	{
-		id: 1,
+	postgres: {
 		label: "PostgreSQL",
-		color: "bg-blue-200",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+		icon: DEVICON + "postgresql/postgresql-original.svg",
 	},
-	{
-		id: 2,
-		label: "Firebase",
-		color: "bg-amber-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-	},
-	{
-		id: 3,
-		label: "Azure",
-		color: "bg-blue-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-	},
-	{
-		id: 4,
-		label: "Linux",
-		color: "bg-green-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-	},
-	{
-		id: 5,
-		label: "Security",
-		color: "bg-pink-100",
-		icon: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
-	},
-	{
-		id: 6,
-		label: "Testing",
-		color: "bg-lime-100",
-		icon: "https://cdn-icons-png.flaticon.com/512/3306/3306961.png",
-	},
-	{
-		id: 7,
+	firebase: { label: "Firebase", icon: DEVICON + "firebase/firebase-plain.svg" },
+	azure: { label: "Azure", icon: DEVICON + "azure/azure-original.svg" },
+	linux: { label: "Linux", icon: DEVICON + "linux/linux-original.svg" },
+	vercel: {
 		label: "Vercel",
-		color: "bg-neutral-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+		icon: DEVICON + "vercel/vercel-original.svg",
+		mono: true,
 	},
-	{
-		id: 8,
+	supabase: {
 		label: "Supabase",
-		color: "bg-emerald-100",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+		icon: DEVICON + "supabase/supabase-original.svg",
 	},
-];
+	sql: {
+		label: "SQL",
+		icon: DEVICON + "azuresqldatabase/azuresqldatabase-original.svg",
+	},
+	c: { label: "C", icon: DEVICON + "c/c-original.svg" },
+	node: { label: "Node.js", icon: DEVICON + "nodejs/nodejs-original.svg" },
+	tailwind: {
+		label: "Tailwind CSS",
+		icon: DEVICON + "tailwindcss/tailwindcss-original.svg",
+	},
+	git: { label: "Git", icon: DEVICON + "git/git-original.svg" },
+	postman: { label: "Postman", icon: DEVICON + "postman/postman-original.svg" },
+	agentFramework: {
+		label: "Microsoft Agent Framework",
+		icon: LOBE + "microsoft-color.svg",
+	},
+	claudeCode: { label: "Claude Code", icon: LOBE + "claudecode-color.svg" },
+	cursor: { label: "Cursor", icon: LOBE + "cursor.svg", mono: true },
+	pi: { label: "Pi", icon: LOBE + "pi.svg", mono: true },
+} satisfies Record<string, TechItem>;
 
-export const Projects = [
+export type Project = {
+	image: string;
+	// Image is a screenshot shown full-bleed rather than a centred logo
+	shot?: boolean;
+	title: string;
+	category: string;
+	// oklch hue used for the preview tint, index colour and page tint
+	hue: number;
+	content: string;
+	link: string;
+	labels: TechItem[];
+};
+
+export const Projects: Project[] = [
 	{
 		image: companySearchImage,
 		title: "Company Search Cyprus",
+		category: "Product, SaaS",
+		hue: 160,
 		content:
-			"Web application that allows users to search for company information in Cyprus. Users can create an account, save and organize companies they’re interested in and stay informed through regularly updated blog posts.",
+			"Search Cyprus company records. Create an account, save and organise companies, and stay current through regular blog posts.",
 		link: "https://companysearchcyprus.com/",
 		labels: [
-			row1Items[0],
-			row1Items[1],
-			row1Items[2],
-			row1Items[3],
-			row1Items[4],
-			row2Items[1],
-			row2Items[4],
-			row3Items[0],
-			row3Items[1],
-			row3Items[2],
-			row3Items[7],
+			tech.react,
+			tech.ts,
+			tech.tailwind,
+			tech.net,
+			tech.postgres,
+			tech.azure,
+			tech.supabase,
+			tech.firebase,
 		],
 	},
 	{
 		image: cynewstoday,
 		title: "Cyprus News Today",
+		category: "AI news",
+		hue: 25,
 		content:
-			"This project is an AI-driven news platform that generates articles using Perplexity’s research-focused AI. It automatically gathers information from reliable sources, analyzes emerging topics and produces clear, engaging news articles.",
+			"An AI-driven news platform. Perplexity research gathers reliable sources, spots emerging topics and writes clear articles.",
 		link: "https://newscy-nextjs.vercel.app/",
 		labels: [
-			row1Items[0],
-			row1Items[1],
-			row1Items[2],
-			row1Items[3],
-			row1Items[4],
-			row2Items[2],
-			row2Items[4],
-			row3Items[0],
-			row3Items[6],
-			row3Items[7],
+			tech.next,
+			tech.react,
+			tech.ts,
+			tech.postgres,
+			tech.vercel,
+			tech.supabase,
 		],
 	},
 	{
-		image: websocketfromscratch,
-		title: "Websockets From Scratch With C#",
+		image: websockets,
+		title: "WebSockets From Scratch",
+		category: "Systems, C#",
+		hue: 265,
 		content:
-			"This project demonstrates a WebSocket connection built from scratch using C# (.NET) with a simple frontend that simulates real-time product bidding. Opening the app in multiple tabs shows live bid updates across all connections, and WebSocket traffic can be inspected in the browser’s DevTools (Network → WS). The README further explains and analyzes each step of the implementation.",
+			"A WebSocket server hand-built in C#/.NET, demoed as live product bidding. Open two tabs and watch bids sync in real time.",
 		link: "https://gray-coast-0d6a1cc03.4.azurestaticapps.net/",
-		labels: [
-			row2Items[0],
-			row2Items[1],
-			row1Items[0],
-			row1Items[1],
-			row1Items[4],
-			row2Items[4],
-		],
+		labels: [tech.cs, tech.net, tech.html, tech.css, tech.js, tech.github],
 	},
 	{
 		image: eleniSweetsImage,
 		title: "Eleni Sweets",
+		category: "E-commerce",
+		hue: 350,
 		content:
-			"Created a sweets shop website where users can browse different types of sweets and add their favorites to a shopping cart.",
+			"A sweets shop where visitors browse treats and add favourites to a cart.",
 		link: "https://legendary-caramel-526ade.netlify.app/",
-		labels: [
-			row1Items[0],
-			row1Items[1],
-			row1Items[2],
-			row1Items[4],
-			row3Items[1],
-		],
+		labels: [tech.react, tech.js, tech.html, tech.css, tech.firebase],
 	},
 	{
 		image: vanLifeImage,
 		title: "Van Life",
+		category: "Rentals",
+		hue: 70,
 		content:
-			"A website for renting vans as one of my early web development projects. The site allows users to browse available vans, view details like pricing and features",
+			"One of my early projects: browse rental vans and view pricing and features.",
 		link: "https://main--magical-puffpuff-54104d.netlify.app/",
-		labels: [
-			row1Items[0],
-			row1Items[1],
-			row1Items[2],
-			row1Items[4],
-			row3Items[1],
-		],
+		labels: [tech.react, tech.js, tech.html, tech.css, tech.firebase],
 	},
 	{
-		image: quizicalImage,
+		image: quizzicalShot,
+		shot: true,
 		title: "Quizzzzical",
+		category: "Game",
+		hue: 300,
 		content:
-			"A quiz game with 10 different questions was one of my first mini projects. It helped me get comfortable with basic programming concepts",
+			"A ten-question quiz — one of my first mini projects, where the fundamentals clicked.",
 		link: "https://652a76cf02104c2077f0de03--zippy-torte-b48343.netlify.app/",
-		labels: [row1Items[0], row1Items[1], row1Items[2], row1Items[4]],
+		labels: [tech.react, tech.js, tech.html, tech.css],
+	},
+];
+
+export const StackGroups: { label: string; items: TechItem[] }[] = [
+	{
+		label: "Languages",
+		items: [tech.ts, tech.js, tech.cs, tech.sql, tech.html, tech.css, tech.c],
+	},
+	{
+		label: "Frameworks & libraries",
+		items: [tech.react, tech.next, tech.net, tech.node, tech.tailwind],
+	},
+	{
+		label: "AI & agentic development",
+		items: [tech.agentFramework, tech.claudeCode, tech.cursor, tech.pi],
+	},
+	{
+		label: "Cloud, DevOps & data",
+		items: [
+			tech.azure,
+			tech.docker,
+			tech.git,
+			tech.github,
+			tech.postman,
+			tech.vercel,
+			tech.linux,
+			tech.postgres,
+			tech.supabase,
+			tech.firebase,
+		],
 	},
 ];
