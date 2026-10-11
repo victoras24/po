@@ -114,6 +114,16 @@ export const Projects: Project[] = [
 		],
 	},
 	{
+		image: websockets,
+		title: "WebSockets From Scratch",
+		category: "Systems, C#",
+		hue: 265,
+		content:
+			"A WebSocket server hand-built in C#/.NET, demoed as live product bidding. Open two tabs and watch bids sync in real time.",
+		link: "https://gray-coast-0d6a1cc03.4.azurestaticapps.net/",
+		labels: [tech.cs, tech.net, tech.html, tech.css, tech.js, tech.github],
+	},
+	{
 		image: cynewstoday,
 		title: "Cyprus News Today",
 		category: "AI news",
@@ -129,16 +139,6 @@ export const Projects: Project[] = [
 			tech.vercel,
 			tech.supabase,
 		],
-	},
-	{
-		image: websockets,
-		title: "WebSockets From Scratch",
-		category: "Systems, C#",
-		hue: 265,
-		content:
-			"A WebSocket server hand-built in C#/.NET, demoed as live product bidding. Open two tabs and watch bids sync in real time.",
-		link: "https://gray-coast-0d6a1cc03.4.azurestaticapps.net/",
-		labels: [tech.cs, tech.net, tech.html, tech.css, tech.js, tech.github],
 	},
 	{
 		image: eleniSweetsImage,
